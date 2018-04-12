@@ -1,0 +1,14 @@
+{{log remindAuth}}
+{{#if remindAuth}}
+    <a href="https://github.com/login/oauth/authorize?client_id=a345c8bc7fff1e3b0632">
+      <strong>Authenticate with Github API</strong>
+    </a>
+{{/if}}
+{{#if showNavbar}}
+    <header>
+        This is Header
+    </header>
+{{/if}}
+<main>
+    {{outlet}}
+</main>
