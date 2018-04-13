@@ -18,6 +18,8 @@ Router.map(function() {
   this.route('oauth-callback');
   this.route('github-users');
   // this.route('application', function() {});
+  this.route('page-not-found', {path: '/*path'});
+  this.route('file-upload');
 });
 
 export default Router;
