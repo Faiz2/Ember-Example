@@ -19,7 +19,7 @@ Router.map(function() {
   this.route('github-users');
   // this.route('application', function() {});
   this.route('page-not-found', {path: '/*path'});
-  this.route('file-upload');
+  this.route('example-file-upload');
 });
 
 export default Router;

@@ -1,6 +1,8 @@
 import Component from '@ember/component';
 import styles from '../../github-users/styles';
-import set from 'ember-metal/set';
+// import set from 'ember-metal/set';
+
+const { set,get } = Ember
 
 export default Component.extend({
     styles,
