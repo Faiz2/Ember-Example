@@ -20,6 +20,7 @@ Router.map(function() {
   // this.route('application', function() {});
   this.route('page-not-found', {path: '/*path'});
   this.route('example-file-upload');
+  this.route('example-forms');
 });
 
 export default Router;

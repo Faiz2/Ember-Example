@@ -1,0 +1,11 @@
+<div>
+  <p>{{input value=person.firstName}}</p>
+  <p>{{input value=person.lastName}}</p>
+  <p>{{input value=person.age}}</p>
+  <p>{{input value=person.company}}</p>
+  <p>{{input value=person.favicon}}</p>
+  <p>{{input value=person.email}}</p>
+</div>
+<p>{{person.fullName}}</p>
+<button type="button" name="button" {{action 'btnSubmit' }}>Submit</button>
+{{outlet}}
