@@ -43,22 +43,24 @@ export default Component.extend({
     },
 
   },
-  // onClick() {
-  //     console.log(this)
-  //     // get(this,'ajax')
-  //     //   .request('/users/' + user.login + '/following')
-  //     //   .then((followings) => {
-  //     //     set(this, 'userFollowings', followings)
-  //     //   })
-  // },
+  onClick(name) {
+      // console.log(this)
+      console.log(name)
+      this.get('ajax')
+        .request('/users/' + name + '/following')
+        .then((followings) => {
+          set(this, 'userFollowings', followings)
+        })
+  },
 
-    // click(e) {
-    //   console.log(this)
-    //   // e.preventDefault();
-    //   // let a = "fuck0";
-    //   // this.get('ajax')
-    //   // this.get('onClick')(a);
-    //   // console.log('this was clicked');
-    //
-    // }
+    click(e) {
+      // console.log(this);
+      // console.log(e);
+      e.preventDefault();
+      // let a = "fuck0";
+      // this.get('ajax')
+      this.get('onClick')(name);
+      // console.log('this was clicked');
+
+    }
 });
