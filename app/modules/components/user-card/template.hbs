@@ -1,0 +1,34 @@
+<div local-class="user-card-info">
+    <div local-class="card-top">
+    </div>
+    <div local-class="card-middle">
+        <img src="{{item.avatar_url}}" alt="">
+    </div>
+    <div local-class= "card-bottom">
+        <p>{{item.login}}</p>
+        <div local-class="card-bottom-content">
+            <div local-class="card-bottom-left">
+                <p>Followers</p>
+                {{#each followers as |follower|}}
+                    <div local-class="follower-avatar">
+                        {{!-- <img src="{{follower.id}}" alt=""> --}}
+                        {{follower.id}}
+                    </div>
+                {{/each}}
+            </div>
+            <div local-class= "card-bottom-center">
+                center
+            </div>
+            <div local-class= "card-bottom-right">
+                right
+                {{#each followings as |following|}}
+                    <div local-class="follower-avatar">
+                        {{following.id}}
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+
+    </div>
+</div>
+{{yield}}
