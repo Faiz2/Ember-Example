@@ -1,0 +1,37 @@
+.user-card-info {
+    position: relative;
+
+}
+.card-top {
+    height: 100px;
+    background-color: #55ab95;
+    margin-bottom: 50px;
+}
+.card-middle {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    text-align: center;
+}
+.card-middle img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    top: -50px;
+}
+.card-bottom {
+    padding: 5px;
+}
+.card-bottom-content {
+    display: flex;
+    padding: 5px 10px;
+}
+.card-bottom p {
+    height: 20px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 20px;
+}
+.card-bottom-content div {
+    flex: 1;
+}

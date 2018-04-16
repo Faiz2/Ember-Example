@@ -15,7 +15,7 @@ export default Component.extend({
           };
 
           return file.upload('/photos/new').then(({ body: { filename, url, type } }) => {
-              // debugger
+              debugger
               this.get('imageArray').pushObject({
                   filename,
                   preview: url,

@@ -11,5 +11,6 @@ export default Route.extend({
         //     {id: 3, login: 'C'}
         // ];
         return this.get('ajax').request(`/users`)
-    }
+    },
+    
 });

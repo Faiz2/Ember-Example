@@ -1,6 +1,6 @@
 import Route from '@ember/routing/route';
 import { inject } from '@ember/service';
-import { set } from '@ember';
+import { set } from '@ember/object';
 
 export default Route.extend({
     ajax: inject(),

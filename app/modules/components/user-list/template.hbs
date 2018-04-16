@@ -1,26 +1,38 @@
 {{#if isShowUsers}}
-    <div local-class="user-list">
-        <ul>
-            {{#each model as |item|}}
-                <li {{action 'getUserInfo' item}}>{{item.id}} - {{item.login}}</li>
-            {{/each}}
-        </ul>
-    </div>
+  <div local-class="user-list">
+    <ul>
+      {{#each model as |item|}}
+        {{!-- <li {{action 'getUserInfo' item}}>{{item.id}} - {{item.login}}</li> --}}
+        {{#bs-accordion as |acc|}}
+          {{#acc.item user=item.login as |aitem|}}
+            {{#aitem.title}}
+              <strong>{{item.id}}</strong> <i>{{item.login}}</i>
+            {{/aitem.title}}
+            {{#aitem.body}}
+              {{user-card item = item followings = userFollowings}}
+              
+            {{/aitem.body}}
+          {{/acc.item}}
+
+        {{/bs-accordion}}
+      {{/each}}
+    </ul>
+  </div>
 {{else}}
-    <p>
-        <button type="button" name="button" {{action 'showUsers'}}>显示用户列表</button>
-    </p>
-    <div local-class="user-info">
-        <table>
-            <tr>
-                <td>Name: {{selectUser.login}}</td>
-                <td>
-                    Icon：
-                    <img src="{{selectUser.avatar_url}}" class="img-circle" alt="" width="200" height="200">
-                </td>
-            </tr>
-        </table>
-    </div>
+  <p>
+    <button type="button" name="button" {{action 'showUsers'}}>显示用户列表</button>
+  </p>
+  <div local-class="user-info">
+    <table>
+      <tr>
+        <td>Name: {{selectUser.login}}</td>
+        <td>
+          Icon：
+          <img src="{{selectUser.avatar_url}}" class="img-circle" alt="" width="200" height="200">
+        </td>
+      </tr>
+    </table>
+  </div>
 {{/if}}
 
 {{yield}}
