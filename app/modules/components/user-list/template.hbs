@@ -5,12 +5,11 @@
         {{!-- <li {{action 'getUserInfo' item}}>{{item.id}} - {{item.login}}</li> --}}
         {{#bs-accordion as |acc|}}
           {{#acc.item user=item.login as |aitem|}}
-            {{#aitem.title}}
-              <strong>{{item.id}}</strong> <i>{{item.login}}</i>
+            {{#aitem.title }}
+              <strong>{{item.id}}</strong><i>{{item.login}}</i>
             {{/aitem.title}}
             {{#aitem.body}}
               {{user-card item = item followings = userFollowings}}
-              
             {{/aitem.body}}
           {{/acc.item}}
 
