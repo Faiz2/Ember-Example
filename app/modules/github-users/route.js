@@ -10,7 +10,6 @@ export default Route.extend({
         //     {id: 2, login: 'B'},
         //     {id: 3, login: 'C'}
         // ];
-
         return this.get('ajax').request(`/users`)
     }
 });
