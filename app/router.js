@@ -16,11 +16,10 @@ Ember.Route.reopen({
 
 Router.map(function() {
   this.route('oauth-callback');
-  this.route('github-users', function() {});
-  // this.route('application', function() {});
-  this.route('page-not-found', {path: '/*path'});
+  this.route('github-users',function(){});
   this.route('example-file-upload');
   this.route('example-forms');
+  this.route('page-not-found', {path: '/*path'});
 });
 
 export default Router;

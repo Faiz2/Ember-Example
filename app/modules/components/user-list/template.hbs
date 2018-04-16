@@ -1,34 +1,16 @@
-{{#if isShowUsers}}
-  <div local-class="user-list">
-      {{#bs-accordion as |acc|}}
-          {{#each model as |user_item index|}}
-          {{!-- userInfo=user_item --}}
-              {{#acc.item onClick=(action 'onClick' ) value=index as |aitem|}}
-                  {{#aitem.title }}
-                      <strong>{{user_item.id}}.</strong> <i>{{user_item.login}}</i>
-                  {{/aitem.title}}
-                  {{#aitem.body}}
-                        00
-                  {{/aitem.body}}
-              {{/acc.item}}
-          {{/each}}
-      {{/bs-accordion}}
-  </div>
-{{else}}
-  <p>
-    <button type="button" name="button" {{action 'showUsers'}}>显示用户列表</button>
-  </p>
-  <div local-class="user-info">
-    <table>
-      <tr>
-        <td>Name: {{selectUser.login}}</td>
-        <td>
-          Icon：
-          <img src="{{selectUser.avatar_url}}" class="img-circle" alt="" width="200" height="200">
-        </td>
-      </tr>
-    </table>
-  </div>
-{{/if}}
+<div local-class="user-list">
+    {{#bs-accordion as |acc|}}
+        {{#each model as |user_item index|}}
+            {{#acc.item value=index as |aitem|}}
+                {{#aitem.title onClick=(action 'getDetails' acc.change index user_item)}}
+                    <strong>{{user_item.id}}.</strong> <i>{{user_item.login}}</i>
+                {{/aitem.title}}
+                {{#aitem.body}}
+                      {{ user-card item=user_item}}
+                {{/aitem.body}}
+            {{/acc.item}}
+        {{/each}}
+    {{/bs-accordion}}
+</div>
 
 {{yield}}

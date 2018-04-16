@@ -3,23 +3,15 @@ import styles from '../../github-users/styles';
 import { set, get } from '@ember/object';
 import {  inject } from '@ember/service';
 
-import { getOwner } from '@ember/application';
-
 import item from 'ember-bootstrap/components/base/bs-accordion/item';
 
 export default item.extend({
     styles,
-    isShowUsers: true,
     selectUser: null,
     ajax: inject(),
-
-    userInfo: null,
+    // toggleCollapsed: true, //一个按钮全部显示设置
 
     actions: {
-        showUsers() {
-          set(this, 'isShowUsers', true);
-          set(this, 'selectUser', null);
-        },
         getUserInfo(user) {
           // console.info(user)
           // set(this, 'isShowUsers', false);
@@ -32,22 +24,10 @@ export default item.extend({
               set(this, 'userFollowings', followings)
             })
         },
-        onClick() {
-            this._super(...arguments)
-            console.info('fuck')
+        getDetails(fun, index, user) {
+            fun(index);
+            // 你的逻辑
+            // this.toggleProperty('toggleCollapsed') //一个按钮全部显示设置
         }
-    },
-    // onClick() {
-    //     console.info('aa')
-    // }
-    // click(e) {
-    //     this._super(...arguments);
-    //     console.log(this.get('isSelected'));
-    //
-    //   // let a = "fuck0";
-    //   // this.get('ajax')
-    //   // this.get('onClick')(name);
-    //   // console.log('this was clicked');
-    //
-    // }
+    }
 });
