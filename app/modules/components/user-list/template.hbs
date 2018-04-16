@@ -1,21 +1,18 @@
 {{#if isShowUsers}}
   <div local-class="user-list">
-    <ul>
-      {{#each model as |item|}}
-        {{!-- <li {{action 'getUserInfo' item}}>{{item.id}} - {{item.login}}</li> --}}
-        {{#bs-accordion as |acc|}}
-          {{#acc.item user=item.login as |aitem|}}
-            {{#aitem.title }}
-              <strong>{{item.id}}</strong><i>{{item.login}}</i>
-            {{/aitem.title}}
-            {{#aitem.body}}
-              {{user-card item = item followings = userFollowings}}
-            {{/aitem.body}}
-          {{/acc.item}}
-
-        {{/bs-accordion}}
-      {{/each}}
-    </ul>
+      {{#bs-accordion as |acc|}}
+          {{#each model as |user_item index|}}
+          {{!-- userInfo=user_item --}}
+              {{#acc.item onClick=(action 'onClick' ) value=index as |aitem|}}
+                  {{#aitem.title }}
+                      <strong>{{user_item.id}}.</strong> <i>{{user_item.login}}</i>
+                  {{/aitem.title}}
+                  {{#aitem.body}}
+                        00
+                  {{/aitem.body}}
+              {{/acc.item}}
+          {{/each}}
+      {{/bs-accordion}}
   </div>
 {{else}}
   <p>
