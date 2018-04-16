@@ -7,6 +7,24 @@ module.exports = function(defaults) {
     console.info(sourceMap)
     let app = new EmberApp(defaults, {
         // Add options here
+        cssModules: {
+            plugins: [
+                require('postcss-import'),
+                require('postcss-extend'),
+                require('postcss-cssnext'),
+                require('rucksack-css')({
+                    alias: false,
+                    hexRGBA: false,
+                    fallbacks: true
+                })
+
+            ]
+        },
+        'ember-bootstrap': {
+            'bootstrapVsesion': 3,
+            'importBootstrapFont': true,
+            'importBootstrapCSS': true
+        },
         babel: {
             sourceMaps: sourceMap
         }
