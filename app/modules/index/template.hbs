@@ -1,0 +1,11 @@
+{{#if remindAuth}}
+    <a href="https://github.com/login/oauth/authorize?client_id=e9ff62251a5cb4679244">
+      <strong>Authenticate with Github API</strong>
+    </a>
+{{/if}}
+
+<h1>Index</h1>
+{{#link-to 'github-users'}}
+  github-users
+{{/link-to}}
+{{outlet}}
