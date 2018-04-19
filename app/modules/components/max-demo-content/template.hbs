@@ -1,0 +1,12 @@
+
+{{yield (hash
+        firstStep=firstStep
+        secondStep=secondStep
+        thirdStep=thirdStep
+        fourthStep=fourthStep
+    )
+}}
+<button type="button" name="button" {{action 'nextClick' 1}}>第一</button>
+<button type="button" name="button" {{action 'nextClick' 2}}>第二</button>
+<button type="button" name="button" {{action 'nextClick' 3}}>第三</button>
+<button type="button" name="button" {{action 'nextClick' 4}}>第四</button>

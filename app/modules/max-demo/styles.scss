@@ -1,0 +1,6 @@
+li:global(.active) {
+    color: red;
+}
+li:global(.noactive) {
+    color: black;
+}

@@ -15,11 +15,12 @@ Ember.Route.reopen({
 });
 
 Router.map(function() {
-    this.route('oauth-callback');
-    this.route('github-users', function() {});
-    this.route('example-file-upload');
-    this.route('example-forms');
-    this.route('page-not-found', {path: '/*path'});
+  this.route('oauth-callback');
+  this.route('github-users', function() {});
+  this.route('example-file-upload');
+  this.route('example-forms');
+  this.route('page-not-found', {path: '/*path'});
+  this.route('max-demo');
 });
 
 export default Router;
