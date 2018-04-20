@@ -27,7 +27,7 @@ module.exports = function(defaults) {
         },
         babel: {
             sourceMaps: sourceMap
-        }
+        },
     });
 
       // Use `app.import` to add additional libraries to the generated

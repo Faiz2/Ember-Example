@@ -21,6 +21,7 @@ Router.map(function() {
   this.route('example-forms');
   this.route('page-not-found', {path: '/*path'});
   this.route('max-demo');
+  this.route('echarts-demo');
 });
 
 export default Router;
